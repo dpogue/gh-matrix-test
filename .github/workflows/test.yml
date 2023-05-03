@@ -1,0 +1,24 @@
+on:
+  workflow_dispatch
+
+jobs:
+  deploy:
+    strategy:
+      max-parallel: 1
+      matrix:
+        service:
+          - a
+          - b
+          - c
+          - d
+          - e
+          - f
+          - g
+          - h
+          - i
+          - j
+          - k
+          - l
+    name: ${{ matrix.service }}
+    steps:
+      - run: echo ${{ matrix.service }}
