@@ -3,6 +3,8 @@ on:
 
 jobs:
   deploy:
+    runs-on: ubuntu-latest
+    name: ${{ matrix.service }}
     strategy:
       max-parallel: 1
       matrix:
@@ -19,6 +21,6 @@ jobs:
           - j
           - k
           - l
-    name: ${{ matrix.service }}
+
     steps:
       - run: echo ${{ matrix.service }}
